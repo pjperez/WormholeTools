@@ -1,0 +1,3 @@
+AccountImport myhub.vpn
+AccountPasswordSet MyHUB /PASSWORD:1234 /TYPE:STANDARD
+AccountConnect MyHUB
