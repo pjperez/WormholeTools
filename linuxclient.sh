@@ -9,18 +9,23 @@
 # This code is made public for our customers and anyone else interested. It might not always reflect the latest version in production.
 #
 #
-LINK="http://softether-download.com/files/softether/v4.19-9599-beta-2015.10.19-tree/Linux/SoftEther_VPN_Client/64bit_-_Intel_x64_or_AMD64/softether-vpnclient-v4.19-9599-beta-2015.10.19-linux-x64-64bit.tar.gz"
+LINK="https://whdowns.blob.core.windows.net/whclient/softether-vpnclient-v4.19-9599-beta-2015.10.19-linux-x64-64bit.tar.gz"
 FILE="$(echo $LINK | awk -F "/" '{print $NF}')"
 VPNCONFIGFILE="myhub.vpn"
 
+# Download, uncompress and compile the client
 wget $LINK
 tar xvfz $FILE
 cd vpnclient
 make
+
+# Start the VPN client daemon
 ./vpnclient start
+
 # Let's copy the files into the folder 
 mv ../$VPNCONFIGFILE .
 mv ../linuxconfig .
 ./vpncmd /CLIENT 127.0.0.1:5555 /IN:linuxconfig
+
+# Get a new IP address and show the 
 dhclient vpn_vpn
-echo DONE
