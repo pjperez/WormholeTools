@@ -28,4 +28,6 @@ mv ../linuxconfig .
 ./vpncmd /CLIENT 127.0.0.1:5555 /IN:linuxconfig
 
 # Get a new IP address and show the 
+echo "Acquiring IP address..."
 dhclient vpn_vpn
+echo "IP address acquired!"
