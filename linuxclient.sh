@@ -11,7 +11,7 @@
 #
 LINK="https://whdowns.blob.core.windows.net/whclient/softether-vpnclient-v4.19-9599-beta-2015.10.19-linux-x64-64bit.tar.gz"
 FILE="$(echo $LINK | awk -F "/" '{print $NF}')"
-VPNCONFIGFILE="myhub.vpn"
+
 
 # Download, uncompress and compile the client
 wget $LINK
@@ -23,7 +23,7 @@ make
 ./vpnclient start
 
 # Let's copy the files into the folder 
-mv ../$VPNCONFIGFILE .
+mv ../*.vpn .
 mv ../linuxconfig .
 ./vpncmd /CLIENT 127.0.0.1:5555 /IN:linuxconfig
 
