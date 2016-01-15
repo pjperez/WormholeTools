@@ -18,7 +18,7 @@ wget $LINK
 tar xvfz $FILE
 cd vpnclient
 
-# By running the command below, means you have read and agree the license agreement included in the SoftEther VPN package
+# By running the command below, means you have read and agree with the license agreement included in the SoftEther VPN package
 make i_read_and_agree_the_license_agreement
 
 # Start the VPN client daemon
@@ -27,10 +27,12 @@ make i_read_and_agree_the_license_agreement
 # Let's copy the files into the folder
 mv ../*.vpn .
 mv ../linuxconfig .
+
+# Wait 2s and connect to the local vpnclient daemon with vpncmd
 sleep 2s
 ./vpncmd /CLIENT 127.0.0.1:5555 /IN:linuxconfig
 
-# Get a new IP address and show the
+# Get a new IP address
 echo "Acquiring IP address..."
 dhclient vpn_wormhole
 echo "IP address acquired!"
