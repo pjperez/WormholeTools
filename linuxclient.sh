@@ -17,7 +17,9 @@ FILE="$(echo $LINK | awk -F "/" '{print $NF}')"
 wget $LINK
 tar xvfz $FILE
 cd vpnclient
-make
+
+# By running the command below, means you have read and agree the license agreement included in the SoftEther VPN package
+make i_read_and_agree_the_license_agreement
 
 # Start the VPN client daemon
 ./vpnclient start
