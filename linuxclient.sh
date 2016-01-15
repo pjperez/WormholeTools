@@ -24,12 +24,13 @@ make i_read_and_agree_the_license_agreement
 # Start the VPN client daemon
 ./vpnclient start
 
-# Let's copy the files into the folder 
+# Let's copy the files into the folder
 mv ../*.vpn .
 mv ../linuxconfig .
+sleep 2s
 ./vpncmd /CLIENT 127.0.0.1:5555 /IN:linuxconfig
 
-# Get a new IP address and show the 
+# Get a new IP address and show the
 echo "Acquiring IP address..."
-dhclient vpn_vpn
+dhclient vpn_wormhole
 echo "IP address acquired!"
