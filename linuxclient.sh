@@ -9,7 +9,7 @@
 # This code is made public for our customers and anyone else interested. It might not always reflect the latest version in production.
 #
 #
-LINK="https://whdowns.blob.core.windows.net/whclient/softether-vpnclient-v4.19-9599-beta-2015.10.19-linux-x64-64bit.tar.gz"
+LINK="https://whdowns.blob.core.windows.net/whclient/softether-vpnclient-latest-linux-x64-64bit.tar.gz"
 FILE="$(echo $LINK | awk -F "/" '{print $NF}')"
 
 
